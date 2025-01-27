@@ -12,12 +12,5 @@ steps:
 - script: echo Dummy Docker image build
   displayName: 'Build docker image'
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      terraform init
-      terraform apply -var-file="test.tfvars" -auto-approve
-    workingDirectory: 'infra/venkat_terraform'
+
 
