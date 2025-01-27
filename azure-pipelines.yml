@@ -19,4 +19,9 @@ steps:
       terraform init
       terraform apply -var-file="test.tfvars" -auto-approve
     workingDirectory: 'infra/venkat_terraform'
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      kubectl apply -f aks-store-quickstart.yaml
+      kubectl get service store-front --output 'jsonpath={..status.loadBalancer.ingress[0].ip}'
