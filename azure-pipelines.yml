@@ -17,6 +17,6 @@ steps:
     targetType: 'inline'
     script: |
       terraform init
-      terraform apply -var-file="test.tfvars" -autp-approve
+      terraform apply -var-file="test.tfvars" -auto-approve
     workingDirectory: 'infra/venkat_terraform'
 
