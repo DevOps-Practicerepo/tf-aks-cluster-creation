@@ -6,18 +6,19 @@ terraform {
       version = ">= 4.14.0"
     }
   }
-  required_version = ">= 1.11.0"
-
+  
   backend "azurerm" {
     # Can be passed via `-backend-config=`"resource_group_name=<resource group name>"` in the `init` command.
     resource_group_name = "tfstate"
     # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
     storage_account_name = "tfstatesdemo"
     # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
-    container_name = "tfk8s"
+    container_name = "workshop-tfstate"
     # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
-    key = "terraform_k8s.terraform.tfstate"
+    key = "Wokshop.tfstate"
 
   }
+
+  required_version = ">= 1.11.0"
 }
 
