@@ -6,7 +6,9 @@
 trigger:
 - main
 
-pool: ubuntu-latest
+pool:
+  vmImage: 'ubuntu-latest'
+
 
 steps:
 - script: echo Dummy Docker image build
